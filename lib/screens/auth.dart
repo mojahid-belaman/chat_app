@@ -1,16 +1,9 @@
 import 'package:chat_app/widgets/auth_form.dart';
 import 'package:flutter/material.dart';
 
-class AuthScreen extends StatefulWidget {
+class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
 
-  @override
-  State<AuthScreen> createState() {
-    return _AuthScreenState();
-  }
-}
-
-class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
