@@ -10,6 +10,8 @@ class AuthForm extends StatefulWidget {
 }
 
 class _AuthFormState extends State<AuthForm> {
+  bool _isLogin = true;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -25,6 +27,26 @@ class _AuthFormState extends State<AuthForm> {
           TextFormField(
             decoration: const InputDecoration(labelText: 'Password'),
             obscureText: true,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton.icon(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+                backgroundColor:
+                    Theme.of(context).colorScheme.primaryContainer),
+            icon: Icon(_isLogin ? Icons.login : Icons.app_registration_rounded),
+            label: Text(_isLogin ? 'Login' : 'Signup'),
+          ),
+          TextButton(
+            onPressed: () {
+              setState(() {
+                _isLogin = !_isLogin;
+              });
+            },
+            child: Text(
+                _isLogin ? 'Create an account' : 'I already have an account.'),
           ),
         ],
       ),
